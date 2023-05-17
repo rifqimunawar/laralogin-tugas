@@ -59,8 +59,6 @@ class LoginController extends Controller
       }
       return view('auth.login');
   }
-
-  // prosess login
   public function authenticate(Request $request)
     {
         $credentials = $request->only('username', 'password');
