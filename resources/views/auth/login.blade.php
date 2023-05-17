@@ -16,14 +16,11 @@
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <h1 class="my-5 display-3 fw-bold ls-tight">
-            The best offer <br />
-            <span class="text-primary">for your business</span>
-          </h1>
+            Tugas PBF <br /></h1>
+            <h4><span class="text-primary">Rifqi Munawar</span>
+            </h4>
           <p style="color: hsl(217, 10%, 50.8%)">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eveniet, itaque accusantium odio, soluta, corrupti aliquam
-            quibusdam tempora at cupiditate quis eum maiores libero
-            veritatis? Dicta facilis sint aliquid ipsum atque?
+            Kelas TIF A1 -> 41037006211013
           </p>
         </div>
 

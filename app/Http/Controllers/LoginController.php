@@ -27,7 +27,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            Alert::success('Mantap Sahabat', 'Anda Berhasil Masuk');
+            Alert::success('Terima Kasih', 'Anda Berhasil Masuk');
             return redirect()->intended('/dashboard');
         } else {
             // Authentication failed...
@@ -92,7 +92,7 @@ class LoginController extends Controller
     public function dashboard(Request $request)
     {
       $user = Auth::user();
-      
+
       return view('dashboard', compact('user'));
     }
 }
