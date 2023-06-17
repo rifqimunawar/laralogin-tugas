@@ -48,8 +48,8 @@
                           <label for="domisili">Kamar Penghuni</label>
                           <select class="form-select" name="kamars_id" aria-label="Default select example">
                             <option disabled selected>Pilih Kamar</option>
-                            @foreach ($universitas as $univ)
-                              <option value="{{ $univ->id }}">{{ $univ->name }}</option>
+                            @foreach ($kamars as $kamar)
+                              <option value="{{ $kamar->id }}">{{ $kamar->name }}</option>
                             @endforeach
                           </select>
                         </div>

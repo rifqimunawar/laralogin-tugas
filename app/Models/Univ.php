@@ -9,14 +9,8 @@ class Univ extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    public function penghuni()
+    public function Penghuni()
     {
-        return $this->belongsToMany(Penghuni::class, 'penghuni_univ');
+        return $this->belongsTo(Penghuni::class);
     }
-        // MANY TO MANY RELATION
-        public function mahasiswa()
-        {
-            return $this->belongsToMany('App\Models\Mahasiswa')->withPivot(['nilai']);
-        }
-        // ./MANY TO MANY RELATION
 }

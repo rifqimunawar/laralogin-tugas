@@ -48,10 +48,20 @@
                               </option>
                             @endforeach
                           </select>
-                          
+                        </div>
+                        <div class="mb-2">
+                          <label for="univ_id">Kampus</label>
+                          <select class="form-select" name="univ_id" aria-label="Default select example">
+                            <option disabled selected>Pilih Kamar</option>
+                            @foreach ($universitas as $univ)
+                              <option value="{{ $univ->id }}" {{ $univ->id == $univ->id ? 'selected' : '' }}>
+                                {{ $univ->name }}
+                              </option>
+                            @endforeach
+                          </select>
                         </div>
                         <div class="d-flex justify-content-end">
-                          <a href="{{ route('penghuni.index') }}" class="btn btn-warning btn-sm m-2">Kembali</a>
+                          <a href="{{ route('dashboard') }}" class="btn btn-warning btn-sm m-2">Kembali</a>
                           <button type="submit" class="btn btn-primary btn-sm m-2">Update</button>
                         </div>
                       </form>
