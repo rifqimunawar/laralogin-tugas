@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kamar;
 use App\Models\Penghuni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PenghuniController extends Controller
 {
@@ -18,7 +19,8 @@ class PenghuniController extends Controller
     public function create(Request $request)
     {
       $kamars = Kamar ::all();
-      return view('penghuni.create', compact('kamars'));
+      $user = Auth::user();
+      return view('admin.penghuni.create', compact('kamars', 'user'));
     }
   
     public function store(Request $request)
@@ -39,15 +41,16 @@ class PenghuniController extends Controller
             $phone = $penghuni->phone()->create($phoneData);
         }
     
-        return redirect('/');
+        return redirect('/dashboard');
     }
     
     public function edit($id, Request $request)
     {
+      $user = Auth::user();
       $penghunies = Penghuni ::find($id);
       $kamars=Kamar ::all();
       // dd($penghunies);
-      return view('penghuni.edit', compact('penghunies', 'kamars'));
+      return view('penghuni.edit', compact('penghunies', 'kamars', 'user'));
     }
     public function update($id, Request $request)
     {
@@ -56,12 +59,12 @@ class PenghuniController extends Controller
       $penghuniesData = $request->all();
       $penghunies->update($penghuniesData);
     
-      return redirect('/');
+      return redirect('/dashboard');
     }
     public function destroy($id)
     {
         $penghuni = Penghuni::findOrFail($id);
         $penghuni->delete();
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

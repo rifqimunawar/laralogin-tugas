@@ -345,13 +345,13 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="index.html">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
-          </li>
-          <li class="nav-item nav-category">UI Elements</li>
+          </li> --}}
+          {{-- <li class="nav-item nav-category">UI Elements</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-floor-plan"></i>
@@ -427,12 +427,18 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item nav-category">help</li>
+          </li> --}}
+          <li class="nav-item nav-category">Data</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
+            <a class="nav-link" href="/dashboard">
+              <i class="menu-icon mdi-account-circle-outline"></i>
+              <span class="menu-title">Penghuni</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('kamar.index') }}">
+              <i class="menu-icon mdi mdi-layers-outline"></i>
+              <span class="menu-title">Kamar</span>
             </a>
           </li>
         </ul>

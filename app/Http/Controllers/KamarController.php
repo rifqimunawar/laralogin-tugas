@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Kamar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KamarController extends Controller
 {
   public function index(Request $request)
   {
     $kamars = Kamar::latest()->get();
-    return view('kamar.index', compact('kamars'));
+    $user = Auth::user();
+    return view('admin.kamar.index', compact('kamars', 'user'));
   }
 
   public function create()
   {
-  return view('kamar.create');
+    $user = Auth::user();
+    return view('admin.kamar.create', compact('user'));
   }
 
   public function store(Request $request)
@@ -26,8 +29,9 @@ class KamarController extends Controller
   }
   public function edit($id, Request $request)
   {
+    $user=Auth::user();
     $kamars = Kamar ::find($id);
-    return view('kamar.edit', compact('kamars'));
+    return view('admin.kamar.edit', compact('kamars', 'user'));
   }
   public function update($id, Request $request)
   {
