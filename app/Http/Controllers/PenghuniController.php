@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kamar;
 use App\Models\Penghuni;
+use App\Models\Univ;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,15 +13,14 @@ class PenghuniController extends Controller
   public function index()
   {
       $penghunies = Penghuni::with('kamars', 'phone', 'univ')->latest()->get();
-      // dd($penghunies);
       return view('penghuni.index', compact('penghunies'));
   }
   
     public function create(Request $request)
     {
-      $kamars = Kamar ::all();
+      $universitas = Univ ::all();
       $user = Auth::user();
-      return view('admin.penghuni.create', compact('kamars', 'user'));
+      return view('admin.penghuni.create', compact('universitas', 'user'));
     }
   
     public function store(Request $request)
@@ -67,4 +67,14 @@ class PenghuniController extends Controller
         $penghuni->delete();
         return redirect('/dashboard');
     }
+
+        // MANY TO MANY RELATION
+        public function univ()
+        {
+            $penghuni = Penghuni::get();
+            return view('admin.penghuni.univ', [
+                'title' => 'Data Matkul',
+                'data' => $penghuni
+            ]);
+        }
 }

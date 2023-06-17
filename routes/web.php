@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UnivController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KamarController;
 use App\Http\Controllers\LoginController;
@@ -34,12 +35,21 @@ Route::middleware('admin')->group(function () {
   Route::put('/penghuni/{id}', [PenghuniController::class, 'update'])->name('penghuni.update');
   Route::delete('/penghuni/{id}', [PenghuniController::class, 'destroy'])->name('penghuni.destroy');
 
+  Route::get('/penghuni/univ', [PenghuniController::class, 'univ'])->name('penghuni.univ');
+
   Route::get('/kamar', [KamarController::class, 'index'])->name('kamar.index');
   Route::get('/kamar/create', [KamarController::class, 'create'])->name('kamar.create');
   Route::post('/kamar/store', [KamarController::class, 'store'])->name('kamar.store');
   Route::get('/kamar/{id}/edit', [KamarController::class, 'edit'])->name('kamar.edit');
   Route::put('/kamar/{id}', [KamarController::class, 'update'])->name('kamar.update');
   Route::delete('/kamar/{id}', [KamarController::class, 'destroy'])->name('kamar.destroy');
+
+  Route::get('/univ', [UnivController::class, 'index'])->name('univ.index');
+  Route::get('/univ/create', [UnivController::class, 'create'])->name('univ.create');
+  Route::post('/univ/store', [UnivController::class, 'store'])->name('univ.store');
+  Route::get('/univ/{id}/edit', [UnivController::class, 'edit'])->name('univ.edit');
+  Route::put('/univ/{id}', [UnivController::class, 'update'])->name('univ.update');
+  Route::delete('/univ/{id}', [UnivController::class, 'destroy'])->name('univ.destroy');
 });
 
 

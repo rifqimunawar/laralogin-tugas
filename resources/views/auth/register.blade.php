@@ -16,7 +16,7 @@
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-6 mb-5 mb-lg-0">
           <h1 class="my-5 display-3 fw-bold ls-tight">
-            Tugas PBF <br /></h1>
+            Tugas PBKK <br /></h1>
             <h4><span class="text-primary">Rifqi Munawar</span>
             </h4>
           <p style="color: hsl(217, 10%, 50.8%)">

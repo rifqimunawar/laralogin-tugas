@@ -77,7 +77,7 @@ class LoginController extends Controller
             } else {
                 return redirect()->back()->with(
                   'error', 'Username atau Password Salah');
-            }
+            } 
         }
     }
 

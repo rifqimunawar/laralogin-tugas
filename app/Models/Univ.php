@@ -13,4 +13,10 @@ class Univ extends Model
     {
         return $this->belongsToMany(Penghuni::class, 'penghuni_univ');
     }
+        // MANY TO MANY RELATION
+        public function mahasiswa()
+        {
+            return $this->belongsToMany('App\Models\Mahasiswa')->withPivot(['nilai']);
+        }
+        // ./MANY TO MANY RELATION
 }

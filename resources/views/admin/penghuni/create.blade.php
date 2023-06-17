@@ -36,11 +36,20 @@
                           <input class="form-control" type="text" name="domisili" aria-label="default input example">
                         </div>
                         <div class="mb-2">
-                          <label for="domisili">Domisili Penghuni</label>
+                          <label for="domisili">Kampus Penghuni</label>
+                          <select class="form-select" name="kamars_id" aria-label="Default select example">
+                            <option disabled selected>Pilih Kampus</option>
+                            @foreach ($universitas as $univ)
+                              <option value="{{ $univ->id }}">{{ $univ->name }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="mb-2">
+                          <label for="domisili">Kamar Penghuni</label>
                           <select class="form-select" name="kamars_id" aria-label="Default select example">
                             <option disabled selected>Pilih Kamar</option>
-                            @foreach ($kamars as $kamar)
-                              <option value="{{ $kamar->id }}">{{ $kamar->name }}</option>
+                            @foreach ($universitas as $univ)
+                              <option value="{{ $univ->id }}">{{ $univ->name }}</option>
                             @endforeach
                           </select>
                         </div>
