@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Penghuni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -83,8 +84,9 @@ class LoginController extends Controller
     public function dashboard(Request $request)
     {
       $user = Auth::user();
+      $penghunies = Penghuni::with('kamars', 'phone', 'univ')->latest()->get();
 
-      return view('admin.index', compact('user'));
+      return view('admin.index', compact('user', 'penghunies'));
     }
     
     public function logout(Request $request): RedirectResponse
