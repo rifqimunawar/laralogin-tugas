@@ -23,12 +23,6 @@ class Penghuni extends Model
     }
     public function univ()
     {
-        return $this->belongsToMany(Univ::class, 'penghuni_univ');
+        return $this->belongsTo(Univ::class)->withDefault();
     }
-        // MANY TO MANY RELATION
-        // public function matkul()
-        // {
-        //     return $this->belongsToMany('App\Models\Matkul')->withPivot(['nilai']);
-        // }
-        // ./MANY TO MANY RELATION
 }

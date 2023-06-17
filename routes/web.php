@@ -28,14 +28,14 @@ Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('au
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware('admin')->group(function () {
-  Route::get('/dashboard', [LoginController::class, 'dashboard'])->name('dashboard');
+  Route::get('/dashboard', [PenghuniController::class, 'index'])->name('dashboard');
   Route::get('/penghuni/create', [PenghuniController::class, 'create'])->name('penghuni.create');
   Route::post('/penghuni/store', [PenghuniController::class, 'store'])->name('penghuni.store');
   Route::get('/penghuni/{id}/edit', [PenghuniController::class, 'edit'])->name('penghuni.edit');
   Route::put('/penghuni/{id}', [PenghuniController::class, 'update'])->name('penghuni.update');
   Route::delete('/penghuni/{id}', [PenghuniController::class, 'destroy'])->name('penghuni.destroy');
 
-  Route::get('/penghuni/univ', [PenghuniController::class, 'univ'])->name('penghuni.univ');
+  Route::get('/penghuni/pdf', [PenghuniController::class, 'pdf'])->name('penghuni.pdf');
 
   Route::get('/kamar', [KamarController::class, 'index'])->name('kamar.index');
   Route::get('/kamar/create', [KamarController::class, 'create'])->name('kamar.create');

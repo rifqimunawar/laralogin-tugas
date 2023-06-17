@@ -17,6 +17,7 @@ class PenghuniSeeder extends Seeder
             'name' => 'rifqi',
             'domisili' =>'bandung',
             'kamars_id' =>'1',
+            'univ_id' =>'1',
         ]);
         DB::table('penghuni')->insert([
             'name' => 'munawar',

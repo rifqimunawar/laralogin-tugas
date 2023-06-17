@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('penghuni', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('domisili');
-            $table->foreignId('kamars_id');
+            $table->string('domisili')->nullable();
+            $table->foreignId('kamars_id')->nullable();
+            $table->foreignId('univ_id')->nullable();
             $table->timestamps();
         });
     }

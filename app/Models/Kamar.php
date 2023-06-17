@@ -10,10 +10,8 @@ class Kamar extends Model
 {
     use HasFactory;
     protected $guarded=[];
-
     public function penghuni()
     {
         return $this->hasMany(Penghuni::class);
-
     }
 }

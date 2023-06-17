@@ -12,8 +12,8 @@
             <div>
               <div class="btn-wrapper">
                 <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
-                <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
-                <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                <a href="/penghuni/pdf" target="_blank" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
+                <a href="/penghuni/pdf" target="_blank" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
               </div>
             </div>
           </div>
@@ -41,14 +41,13 @@
                           <td class="text-start">{{ $penghuni->name }}</td>
                           <td class="text-start">{{ $penghuni->domisili }}</td>
                           <td class="text-start">{{ $penghuni->kamars->name }}</td>
+                          {{-- <td class="text-start">{{ $penghuni->univ_id }}</td> --}}
                           <td class="text-start">
-                            @foreach ($penghuni->univ as $universitas)
-                              @if ($universitas)
-                                {{ $universitas->name }}
-                              @else
-                                -
-                              @endif
-                            @endforeach
+                            @if ($penghuni->univ)
+                              {{ $penghuni->univ->name }}
+                            @else
+                              -
+                            @endif
                           </td>
                           <td class="text-start">
                             @if ($penghuni->phone)
